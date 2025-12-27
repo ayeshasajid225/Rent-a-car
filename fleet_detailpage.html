@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details - Premium Luxury Vehicles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assests/styling/navbar.css">
+    <style>
+        :root {
+            --primary: #ffc107;
+            --primary-light: orange;
+            --primary-dark: #ffc107;
+            --accent: #ffc107;
+            --text-dark: white;
+            --text-light: #white;
+            --divider: #000;
+            --background: #000;
+            --card-bg: #000;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--hero-image) center/cover no-repeat;
+            color: white;
+            padding: 100px 0 70px;
+            text-align: center;
+        }
+        
+        .car-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .car-subtitle {
+            font-size: 1.5rem;
+            color: #ffd54f;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffd54f;
+        }
+        
+        /* Content Styles */
+        .detail-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 500px;
+            border: none;
+            margin-bottom: 30px;
+            border-color: gray;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            border-color: #ffc107;
+            border-style: double;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        .center-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--divider);
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li i {
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .image-gallery {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .specs-table tr {
+            border-bottom: 1px solid var(--divider);
+        }
+        
+        .specs-table td {
+            padding: 15px 10px;
+        }
+        
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            width: 40%;
+        }
+        
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 50px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin: 15px 0;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+        }
+        
+        .client-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0;
+        }
+        
+        .client-title {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .specs-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .cta-section {
+            background:black;
+            color: white;
+            padding: 60px ;
+            margin-left: 250px;
+            text-align: center;
+            margin-top: 1rem;
+            border-radius: 12px;
+            border-color: #ffc107;
+            border-style: double;
+            width: 900px;
+        }
+        
+        @media (max-width: 768px) {
+            .car-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section {
+                padding: 80px 0 50px;
+            }
+            
+            .cta-section {
+                margin-left: 0;
+                width: 100%;
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+   <header></header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero-section">
+        <div class="container">
+            <h1 class="car-title" id="car-title">Car Model</h1>
+            <p class="car-subtitle" id="car-subtitle">Premium Luxury Vehicle</p>
+            <p class="price-tag" id="price-tag">$0,000</p>
+            <p class="lead" id="car-tagline">Experience the perfect blend of performance, luxury, and technology</p>
+            <a href="#specs" class="btn btn-light btn-lg mt-3"><i class="fas fa-arrow-down me-2"></i>Explore Features</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Stats Overview -->
+            <div class="row mb-5" id="stats-overview">
+                <div class="col-md-3 col-6 text-center">
+                    <div class="specs-icon mx-auto">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <p class="stat-number" id="stat-acceleration">0.0s</p>
+                    <p class="stat-label">0-60 mph</p>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="specs-icon mx-auto">
+                        <i class="fas fa-horse-head"></i>
+                    </div>
+                    <p class="stat-number" id="stat-horsepower">0</p>
+                    <p class="stat-label">Horsepower</p>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="specs-icon mx-auto">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <p class="stat-number" id="stat-mpg">0/0</p>
+                    <p class="stat-label">MPG City/Hwy</p>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="specs-icon mx-auto">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <p class="stat-number" id="stat-seats">0</p>
+                    <p class="stat-label">Seats</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Main Car Image -->
+                <div class="col-lg-8">
+                    <div class="image-gallery mb-4">
+                        <img src="assests/images/audi 1.jpeg" alt="Car Image" class="img-fluid" id="main-image">
+                    </div>
+                    
+                    <div class="row mb-5" id="gallery-images">
+                        <div class="col-md-4 mb-3">
+                            <div class="image-gallery">
+                                <img src="assests/images/audi 1.jpeg" alt="Car Interior" class="img-fluid gallery-img">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="image-gallery">
+                                <img src="assests/images/audi 1.jpeg" alt="Car Dashboard" class="img-fluid gallery-img">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="image-gallery">
+                                <img src="assests/images/audi 1.jpeg" alt="Car Engine" class="img-fluid gallery-img">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Specifications -->
+                    <h3 id="specs" class="section-title">Technical Specifications</h3>
+                    <div class="table-responsive">
+                        <table class="specs-table" id="specs-table">
+                            <!-- Will be populated by JavaScript -->
+                        </table>
+                    </div>
+                    
+                    <!-- Testimonials -->
+                    <h3 class="section-title mt-5">What Our Clients Say</h3>
+                    <div id="testimonials-container">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Side Content -->
+                <div class="col-lg-4">
+                    <!-- Booking Card -->
+                    <div class="detail-card p-4 mb-4">
+                        <h4 class="mb-4">Reserve This Vehicle</h4>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary btn-lg"><i class="fas fa-calendar-check me-2"></i> Book Now</button>
+                            <button class="btn btn-outline btn-lg"><i class="fas fa-phone me-2"></i> Contact Dealer</button>
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <p class="mb-1"><i class="fas fa-shield-alt me-2 text-primary"></i> Full Insurance Included</p>
+                            <p class="mb-1"><i class="fas fa-tools me-2 text-primary"></i> 24/7 Roadside Assistance</p>
+                            <p class="mb-0"><i class="fas fa-sync-alt me-2 text-primary"></i> Free Cancellation</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Features -->
+                    <div class="detail-card p-4 mb-4">
+                        <h4 class="section-title">Key Features</h4>
+                        <ul class="feature-list" id="features-list">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <!-- Availability -->
+                    <div class="detail-card p-4">
+                        <h4 class="section-title">Availability</h4>
+                        <div class="mb-4">
+                            <h5>Pickup Location</h5>
+                            <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> <span id="location">123 Luxury Avenue, Beverly Hills</span></p>
+                        </div>
+                        <div class="mb-4">
+                            <h5>Available Dates</h5>
+                            <div class="d-flex justify-content-between" id="availability-dates">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Quick Actions</h5>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline"><i class="fas fa-file-alt me-2"></i> Download Brochure</button>
+                                <button class="btn btn-outline"><i class="fas fa-share-alt me-2"></i> Share This Vehicle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="mb-4" id="cta-title">Ready to Experience This Vehicle?</h2>
+            <p class="lead mb-4">Reserve today and enjoy premium luxury with exceptional service</p>
+            <button class="btn btn-light btn-lg me-3"><i class="fas fa-calendar-check me-2"></i> Reserve Now</button>
+            <button class="btn btn-outline-light btn-lg"><i class="fas fa-phone me-2"></i> Call Us</button>
+        </div>
+    </section>
+
+       <!-- ======== FOOTER  ======== -->
+<div class="container my-5">
+    <footer class="text-white text-center text-lg-start" style="background-color: black;">
+        <div class="container p-4">
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 text-warning">About Our Website</h5>
+                    <p>
+                        Discover the freedom of the open road with our premium car rental service. We offer a diverse fleet of vehicles to suit every journey and budget.
+                    </p>
+                    <p>
+                        Our commitment is to provide you with a seamless and reliable rental experience from start to finish.
+                    </p>
+                    <div class="mt-4">
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-instagram"></i></a>
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 pb-1 text-warning">Contact Us</h5>
+
+                    <ul class="fa-ul" style="margin-left: 1.65em;">
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Karachi, Sindh, Pakistan</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@luxuryrides.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 92 345 678 9012</span>
+                        </li>
+                         <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 92 312 345 6789</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 text-warning">Opening hours</h5>
+                    <table class="table text-center text-white">
+                        <tbody class="font-weight-normal">
+                            <tr>
+                                <td>Mon - Thu:</td>
+                                <td>8am - 9pm</td>
+                            </tr>
+                            <tr>
+                                <td>Fri - Sat:</td>
+                                <td>8am - 1am</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday:</td>
+                                <td>9am - 10pm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2025 Copyright:
+            <a class="text-white" href="#">LuxuryRides.com</a>
+        </div>
+        </footer>
+</div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const container = document.getElementById("car-container");
+
+cars.forEach(car => {
+  const card = document.createElement("div");
+  card.className = "car-card";
+  card.innerHTML = `
+    <img src="${car.img}" alt="${car.name}">
+    <div class="car-info">
+      <h5>${car.name}</h5>
+      <p>${car.price}</p>
+      <p>${car.seats}</p>
+    </div>
+  `;
+  // jab card click ho to detail load kare
+  card.addEventListener("click", () => showDetail(car));
+  container.appendChild(card);
+});
+
+// ==== 3️⃣  Show Detail ====
+function showDetail(car) {
+  const detail = document.getElementById("car-detail");
+  detail.innerHTML = `
+    <img src="${car.img}" alt="${car.name}">
+    <h3>${car.name}</h3>
+    <p><strong>Model:</strong> ${car.model}</p>
+    <p><strong>Seats:</strong> ${car.seats}</p>
+    <p><strong>Price:</strong> ${car.price}</p>
+    <p>${car.description}</p>
+    <button id="backBtn" class="btn btn-warning" style="margin-top:15px;">Back to List</button>
+  `;
+
+  // Back button par click karne se detail clear kare
+  document.getElementById("backBtn").addEventListener("click", () => {
+    detail.innerHTML = "";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+    </script>
+
+    <script src="assests/json/fleet.json"></script>
+    <script src="assests/js/navbar.js"></script>
+</body>
+</html>

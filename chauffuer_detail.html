@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chauffeur Services | Luxury Rides</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="assests/styling/navbar.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgb(0,0,0,.6),rgb(0,0,0,.3)), 
+       url("assests/images/bg2.jpeg") no-repeat center center/cover;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      border-radius: 0 0 50px 50px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    /* Section card style */
+    .service-card {
+      border-color: #ffc107;
+      background: #000;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px #ffc107(0,0,0,.1);
+    }
+    
+    .container {
+      border: 2px solid transparent;
+      border-color: #ffc107;
+      border-width: 2px;
+      border-radius: 15px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .container:hover {
+      border-color: #ffc107;
+      border-width: 5px;
+      border-style: double;
+      box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+      transform: translateY(-10px);
+    }
+
+    /* Pricing Cards */
+    .pricing-card {
+      border: none;
+      border-radius: 20px;
+      transition: all .3s ease;
+      background-color: #000000;
+      color: white;
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,.15);
+    }
+    .pricing-card h4 {
+      font-weight: 700;
+      color: #ff8800;
+    }
+    .main-container{
+        background-color: #000;
+    }
+
+    /* Benefits */
+    .benefit i {
+      color: #ffb703;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    /* Buttons */
+    .btn-warning {
+      background: linear-gradient(90deg, #ffb703, #ff8800);
+      border: none;
+      transition: 0.3s ease;
+    }
+    .btn-warning:hover {
+      box-shadow: 0 0 20px rgba(255,183,3,.6);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+<header></header>
+<!-- Hero -->
+<section class="hero">
+  <div>
+    <h1>Chauffeur Services</h1>
+    <p class="lead">Relax while we drive you in style</p>
+  </div>
+</section>
+
+<!-- Service Details -->
+<div class="container my-5">
+  <div class="service-card">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img src="assests/images/chauffer.jpeg" class="img-fluid rounded-4 shadow" alt="Chauffeur Service Car">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bold text-warning">Professional Drivers, Premium Cars</h2>
+        <p class="text-light">Our Chauffeur services are designed for those who prefer luxury and comfort without the hassle of driving. Sit back, relax, and enjoy the journey with our highly trained drivers and luxury vehicles.</p>
+        <ul class="list-unstyled">
+          <li class="mb-2 text-light"><i class="fas fa-check-circle text-warning"></i> Experienced & well-trained chauffeurs</li>
+          <li class="mb-2 text-light"><i class="fas fa-check-circle text-warning"></i> Luxury sedans & SUVs available</li>
+          <li class="mb-2 text-light"><i class="fas fa-check-circle text-warning"></i> Airport transfers, events & business trips</li>
+          <li class="mb-2 text-light"><i class="fas fa-check-circle text-warning"></i> Discreet & professional service</li>
+        </ul>
+        <a href="booking.html" class="btn btn-warning btn-lg rounded-pill px-5 mt-3">Book Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing Plans -->
+<section class="main-container py-5">
+  <div class="container">
+    <h3 class="fw-bold text-center mb-5 text-light">Chauffeur Pricing Plans</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card pricing-card p-4 text-center">
+          <h4>Daily Plan</h4>
+          <p class="fw-bold fs-3">PKR 8,000</p>
+          <p class="text-light">Includes professional chauffeur for full day</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card pricing-card p-4 text-center">
+          <h4>Weekly Plan</h4>
+          <p class="fw-bold fs-3">PKR 50,000</p>
+          <p class="text-light">Ideal for corporate executives & events</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card pricing-card p-4 text-center">
+          <h4>Monthly Plan</h4>
+          <p class="fw-bold fs-3">PKR 180,000</p>
+          <p class="text-light">Perfect for long-term premium service</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="py-5">
+  <div class="container">
+    <h3 class="fw-bold text-center mb-5 text-light">Why Choose Chauffeur Services?</h3>
+    <div class="row g-4 text-center">
+      <div class="col-md-3 benefit">
+        <i class="fas fa-user-tie"></i>
+        <h6 class="fw-bold text-light">Professional Drivers</h6>
+        <p class="text-light">Trained & courteous chauffeurs</p>
+      </div>
+      <div class="col-md-3 benefit">
+        <i class="fas fa-car-side"></i>
+        <h6 class="fw-bold text-light">Premium Cars</h6>
+        <p class="text-light">Luxury sedans & SUVs</p>
+      </div>
+      <div class="col-md-3 benefit">
+        <i class="fas fa-plane"></i>
+        <h6 class="fw-bold text-light">Airport Transfers</h6>
+        <p class="text-light">Timely & reliable pickups</p>
+      </div>
+      <div class="col-md-3 benefit">
+        <i class="fas fa-shield-alt"></i>
+        <h6 class="fw-bold text-light">Safe & Secure</h6>
+        <p class="text-light">Comfort with peace of mind</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- ======== FOOTER  ======== -->
+<div class="container my-5">
+    <footer class="text-white text-center text-lg-start" style="background-color: black;">
+        <div class="container p-4">
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 text-warning">About Our Website</h5>
+                    <p>
+                        Discover the freedom of the open road with our premium car rental service. We offer a diverse fleet of vehicles to suit every journey and budget.
+                    </p>
+                    <p>
+                        Our commitment is to provide you with a seamless and reliable rental experience from start to finish.
+                    </p>
+                    <div class="mt-4">
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-instagram"></i></a>
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 pb-1 text-warning">Contact Us</h5>
+
+                    <ul class="fa-ul" style="margin-left: 1.65em;">
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Karachi, Sindh, Pakistan</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@luxuryrides.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 92 345 678 9012</span>
+                        </li>
+                         <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 92 312 345 6789</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 text-warning">Opening hours</h5>
+                    <table class="table text-center text-white">
+                        <tbody class="font-weight-normal">
+                            <tr>
+                                <td>Mon - Thu:</td>
+                                <td>8am - 9pm</td>
+                            </tr>
+                            <tr>
+                                <td>Fri - Sat:</td>
+                                <td>8am - 1am</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday:</td>
+                                <td>9am - 10pm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2025 Copyright:
+            <a class="text-white" href="#">LuxuryRides.com</a>
+        </div>
+        </footer>
+</div>
+
+<script src="assests/js/navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

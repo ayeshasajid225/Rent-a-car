@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes-Benz S-Class - Premium Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assests/styling/navbar.css">
+  <style>
+      :root {
+          --primary: #ffc107;
+          --accent: #ffc107;
+          --text-dark: #fff;
+          --background: #000;
+          --divider: #444;
+      }
+      body {
+          font-family: 'Roboto', sans-serif;
+          color: var(--text-dark);
+          background-color: var(--background);
+      }
+      .hero-section {
+          background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+          url('https://images.unsplash.com/photo-1618431498476-0dbe2f2d5ab4?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+          padding: 100px 0 70px;
+          text-align: center;
+          color: white;
+      }
+      .car-title {font-family:'Montserrat',sans-serif;font-weight:700;font-size:3.5rem;margin-bottom:.5rem;}
+      .car-subtitle {font-size:1.5rem;color:#ffd54f;margin-bottom:1.5rem;}
+      .price-tag {font-size:2rem;font-weight:700;color:#ffd54f;}
+      .detail-card {
+          background:#000;
+          border-radius:12px;
+          border:none;
+          box-shadow:0 10px 30px rgba(0,0,0,0.08);
+          transition:.3s;
+      }
+      .detail-card:hover {
+          transform: translateY(-5px);
+          border:2px double #ffc107;
+          box-shadow:0 15px 35px rgba(0,0,0,0.12);
+      }
+      .section-title {
+          font-family:'Montserrat',sans-serif;
+          font-weight:700;
+          color:var(--primary);
+          position:relative;
+          padding-bottom:15px;
+          margin-bottom:30px;
+      }
+      .section-title:after {
+          content:'';
+          position:absolute;
+          bottom:0; left:0;
+          width:60px; height:4px;
+          background-color:var(--accent);
+      }
+      .feature-list {list-style:none;padding:0;}
+      .feature-list li {
+          padding:10px 0;
+          display:flex;
+          align-items:center;
+          border-bottom:1px solid var(--divider);
+      }
+      .feature-list li i {color:var(--accent);margin-right:15px;}
+      .specs-icon {
+          width:60px;height:60px;background:#ffc107;color:white;
+          border-radius:12px;display:flex;align-items:center;justify-content:center;
+          font-size:1.5rem;margin-bottom:15px;
+      }
+      .specs-table {width:100%;border-collapse:collapse;}
+      .specs-table tr {border-bottom:1px solid var(--divider);}
+      .specs-table td {padding:15px 10px;}
+      .cta-section {
+          background:black;
+          color:white;
+          padding:60px;
+          margin-top:2rem;
+          border-radius:12px;
+          border:3px double #ffc107;
+          text-align:center;
+      }
+      footer {background:#111;color:white;padding:60px 0 30px;margin-top:50px;}
+  </style>
+</head>
+<body>
+<header></header>
+
+<!-- Hero -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="car-title">Mercedes-Benz S-Class</h1>
+        <p class="car-subtitle">The Standard of Luxury Sedans</p>
+        <p class="price-tag">$111,100</p>
+        <p class="lead">A masterpiece of innovation, comfort, and timeless design.</p>
+        <a href="#specs" class="btn btn-light btn-lg mt-3"><i class="fas fa-arrow-down me-2"></i>Explore Features</a>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-5">
+<div class="container">
+    <!-- Quick Stats -->
+    <div class="row mb-5 text-center">
+        <div class="col-md-3 col-6">
+            <div class="specs-icon mx-auto"><i class="fas fa-tachometer-alt"></i></div>
+            <p class="stat-number">4.7s</p><p>0-60 mph</p>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="specs-icon mx-auto"><i class="fas fa-horse"></i></div>
+            <p class="stat-number">429</p><p>Horsepower</p>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="specs-icon mx-auto"><i class="fas fa-gas-pump"></i></div>
+            <p class="stat-number">21/30</p><p>MPG City/Hwy</p>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="specs-icon mx-auto"><i class="fas fa-car"></i></div>
+            <p class="stat-number">5</p><p>Seats</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Left -->
+        <div class="col-lg-8">
+            <img src="https://images.unsplash.com/photo-1618431498476-0dbe2f2d5ab4?auto=format&fit=crop&w=1200&q=80" class="img-fluid rounded mb-4" alt="Mercedes S-Class">
+
+            <h3 id="specs" class="section-title">Technical Specifications</h3>
+            <div class="table-responsive">
+                <table class="specs-table">
+                    <tr><td>Engine</td><td>3.0L Inline-6 Turbo w/ EQ Boost</td></tr>
+                    <tr><td>Horsepower</td><td>429 hp</td></tr>
+                    <tr><td>Torque</td><td>384 lb-ft</td></tr>
+                    <tr><td>Transmission</td><td>9-speed Automatic</td></tr>
+                    <tr><td>Drivetrain</td><td>4MATIC All-Wheel Drive</td></tr>
+                    <tr><td>0-60 mph</td><td>4.7 seconds</td></tr>
+                    <tr><td>Fuel Economy</td><td>21 city / 30 highway</td></tr>
+                    <tr><td>Curb Weight</td><td>4,775 lbs</td></tr>
+                    <tr><td>Seating Capacity</td><td>5 persons</td></tr>
+                </table>
+            </div>
+
+            <h3 class="section-title mt-5">Client Reviews</h3>
+            <div class="detail-card p-4 mb-4">
+                <p class="fst-italic">“The S-Class defines ultimate luxury. Silent, smooth, and brimming with technology.”</p>
+                <p class="mb-0 fw-bold">— Fahad Ali</p>
+            </div>
+            <div class="detail-card p-4">
+                <p class="fst-italic">“From ambient lighting to massaging seats, every detail exudes class.”</p>
+                <p class="mb-0 fw-bold">— Maria Khan</p>
+            </div>
+        </div>
+
+        <!-- Right -->
+        <div class="col-lg-4">
+            <div class="detail-card p-4 mb-4">
+                <h4 class="mb-4">Reserve This Vehicle</h4>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary btn-lg"><i class="fas fa-calendar-check me-2"></i> Book Now</button>
+                    <button class="btn btn-outline-light btn-lg"><i class="fas fa-phone me-2"></i> Contact Dealer</button>
+                </div>
+            </div>
+
+            <div class="detail-card p-4">
+                <h4 class="section-title">Key Features</h4>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Burmester 3D Surround Sound</li>
+                    <li><i class="fas fa-check"></i> E-Active Body Control Suspension</li>
+                    <li><i class="fas fa-check"></i> MBUX Hyperscreen (Optional)</li>
+                    <li><i class="fas fa-check"></i> Ambient Lighting w/ 64 Colors</li>
+                    <li><i class="fas fa-check"></i> Rear Executive Lounge Seating</li>
+                    <li><i class="fas fa-check"></i> Wireless Apple CarPlay & Android Auto</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2 class="mb-4">Experience the Mercedes-Benz S-Class Today</h2>
+        <p class="lead mb-4">Reserve your luxury drive and indulge in unmatched comfort.</p>
+        <button class="btn btn-light btn-lg me-3"><i class="fas fa-calendar-check me-2"></i> Reserve Now</button>
+        <button class="btn btn-outline-light btn-lg"><i class="fas fa-phone me-2"></i> Call Us</button>
+    </div>
+</section>
+
+   <!-- ======== FOOTER  ======== -->
+<div class="container my-5">
+    <footer class="text-white text-center text-lg-start" style="background-color: black;">
+        <div class="container p-4">
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 text-warning">About Our Website</h5>
+                    <p>
+                        Discover the freedom of the open road with our premium car rental service. We offer a diverse fleet of vehicles to suit every journey and budget.
+                    </p>
+                    <p>
+                        Our commitment is to provide you with a seamless and reliable rental experience from start to finish.
+                    </p>
+                    <div class="mt-4">
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-instagram"></i></a>
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
+                        <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 pb-1 text-warning">Contact Us</h5>
+
+                    <ul class="fa-ul" style="margin-left: 1.65em;">
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Karachi, Sindh, Pakistan</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@luxuryrides.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 92 345 678 9012</span>
+                        </li>
+                         <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 92 312 345 6789</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 text-warning">Opening hours</h5>
+                    <table class="table text-center text-white">
+                        <tbody class="font-weight-normal">
+                            <tr>
+                                <td>Mon - Thu:</td>
+                                <td>8am - 9pm</td>
+                            </tr>
+                            <tr>
+                                <td>Fri - Sat:</td>
+                                <td>8am - 1am</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday:</td>
+                                <td>9am - 10pm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2025 Copyright:
+            <a class="text-white" href="#">LuxuryRides.com</a>
+        </div>
+        </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assests/js/navbar.js"></script>
+</body>
+</html>
